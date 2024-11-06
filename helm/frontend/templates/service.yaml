@@ -4,7 +4,7 @@ metadata:
   name: frontend
   namespace: expense
 spec:
-  type: {{ .values.service.type }}
+  type: {{ .Values.service.type }}
   selector:
     app: frontend
     tier: web
