@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: yswnth/frontend:v1
+        image: yswnth/frontend:v1  # yswnth/frontend2:v1 is built with port 80 --- not work in k8s
 ---
 kind: Service
 apiVersion: v1
@@ -40,4 +40,4 @@ spec:
   - name: frontend-port
     protocol: TCP
     port: 80 # service port
-    targetPort: 80 # container port
+    targetPort: 8080 # container port 80 (system port can be used with root privilege) will not work if the image is built to run with normal user
