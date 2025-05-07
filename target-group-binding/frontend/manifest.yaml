@@ -154,7 +154,7 @@ spec:
   - name: frontend-port
     protocol: TCP
     port: 80 # service port
-    targetPort: 80 # container port
+    targetPort: 8080 # container port, port 80 not work with normal user
 ---
 apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
@@ -177,7 +177,7 @@ metadata:
   namespace: expense
 spec:
   serviceRef:
-    name: frontend # route traffic to the awesome-service
+    name: frontend # name of the service used above
     port: 80
   targetGroupARN: <arn of the target group>
   targetType: ip
