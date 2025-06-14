@@ -1,4 +1,5 @@
 # this content should be updated from the target cluster
+# make sure to remove the resource version from the actual content, as the file when applied will be created as new version 
 apiVersion: v1
 data:
   mapRoles: |
