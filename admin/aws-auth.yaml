@@ -1,3 +1,4 @@
+# this content should be updated from the target cluster
 apiVersion: v1
 data:
   mapRoles: |
