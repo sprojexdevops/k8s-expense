@@ -34,6 +34,7 @@ spec:
       - name: mysql-check
         image: busybox:1.28
         command: ['sh', '-c', "until nslookup mysql; do echo waiting for myservice; sleep 2; done"]
+        # command: ['sh', '-c', "for i in {1..10}; do sleep 1; if nslookup mysql; then exit 0; fi; done; exit 1"]
       containers:
       - name: backend
         image: yswnth/backend:v1
